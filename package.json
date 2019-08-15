@@ -19,6 +19,7 @@
   "homepage": "https://github.com/yahya09206/recipesrch#readme",
   "devDependencies": {
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
   }
 }
