@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yahya09206/recipesrch/issues"
   },
-  "homepage": "https://github.com/yahya09206/recipesrch#readme"
+  "homepage": "https://github.com/yahya09206/recipesrch#readme",
+  "devDependencies": {
+    "webpack": "^4.39.2"
+  }
 }
