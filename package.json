@@ -4,7 +4,7 @@
   "description": "recipe search app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yahya09206/recipesrch#readme",
   "devDependencies": {
-    "webpack": "^4.39.2"
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.6"
   }
 }
