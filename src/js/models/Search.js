@@ -1,1 +1,2 @@
-export default 'I am an exported string.';
+// App controller
+export default class Search
