@@ -7,6 +7,25 @@ import Search from './models/Search';
 // - Liked recipes
 const state = {};
 
-const search = new Search('pizza');
-console.log(search);
-search.getResults();
+// Search function
+const controlSearch = () => {
+	// 1) Get query from view
+	const query = 'pizza' // TODO
+
+	if (query) {
+		// 2) New search object and add to state
+		state.search = new Search(query);
+
+		// 3) Prepare UI for results
+
+		// 4) Search for recipes
+		state.search.getResults();
+	}
+}
+
+// Event listener for search button
+document.querySelector('.search').addEventListener('submit', e => {
+	e.preventDefault();
+	controlSearch();
+
+});
