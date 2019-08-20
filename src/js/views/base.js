@@ -12,7 +12,7 @@ export const elementStrings = {
 // AJAX spinner
 export const renderLoader = parent => {
 	const loader = `
-		<div class="${elements.loader}">
+		<div class="${elementStrings.loader}">
 			<svg>
 				<use href="img/icons.svg#icon-cw"></use>
 			</svg>
@@ -23,5 +23,6 @@ export const renderLoader = parent => {
 
 // Clear loader
 export const clearLoader = () => {
-	const loader = document.querySelector(elements.loader);
-}
+	const loader = document.querySelector(`.${elementStrings.loader}`);
+	if (loader) loader.parentElement.removeChild(loader);
+};
