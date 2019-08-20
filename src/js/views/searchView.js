@@ -59,21 +59,25 @@ const renderButtons = (page, numResults, resPerPage) => {
 	}else if (page < pages) {
 		// both buttons
 		button =` 
-		${createButton(page, 'prev')};
-		${createButton(page, 'next')};
-		`
+		${createButton(page, 'prev')}
+		${createButton(page, 'next')}
+		`;
 	} else if (page === pages && pages > 1) {
 		// only button to go to previous page
 		button = createButton(page, 'prev');
 	}
+	elements.searchResPages.insertAdjacentHTML('afterbegin', button);
 };
 
-export const renderResults = (recipes, page = 1, resPerPage = 10) => {
-	// Display 10 results per page
+export const renderResults = (recipes, page = 3, resPerPage = 10) => {
+	// Render results of current page
 	const start = (page - 1) * resPerPage;
 	const end = page * resPerPage;
 
 	recipes.slice(start, end).forEach(renderRecipe);
+
+	// Render pagination buttons
+	renderButtons(page, recipes.length, resPerPage);
 };
 
 
