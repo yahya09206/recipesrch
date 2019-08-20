@@ -1,5 +1,6 @@
 // App controller
 import axios from 'axios';
+import { key } from '../config';
 
 export default class Search {
 	constructor(query) {
@@ -7,7 +8,6 @@ export default class Search {
 	}
 
 	async getResults(query) {
-			const key = '75d8cd037b7dbc5f872b050a9990aee1';
 		try {
 			const res = await axios(`https://www.food2fork.com/api/search?key=${key}&q=${this.query}`);
 			this.result = res.data.recipes;
