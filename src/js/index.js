@@ -73,4 +73,6 @@ const controlRecipe = async () => {
 		console.log(state.recipe);
 	}
 };
-window.addEventListener('hashchange', controlRecipe);
+// window.addEventListener('hashchange', controlRecipe);
+// window.addEventListener('load', controlRecipe);
+ ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
