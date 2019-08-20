@@ -10,7 +10,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
 // - Liked recipes
 const state = {};
 
-// Search function
+// Search controller
 const controlSearch = async () => {
 	// 1) Get query from view
 	const query = searchView.getInput();
@@ -25,13 +25,17 @@ const controlSearch = async () => {
 		searchView.clearResults();
 		renderLoader(elements.searchRes);
 
+		try {
+			// 4) Search for recipes
+			await state.search.getResults();
 
-		// 4) Search for recipes
-		await state.search.getResults();
-
-		// 5) Render results on UI
-		clearLoader();
-		searchView.renderResults(state.search.result);
+			// 5) Render results on UI
+			clearLoader();
+			searchView.renderResults(state.search.result);
+		} catch(err) {
+			alert('Something went wrong');
+			clearLoader();
+		}
 	}
 }
 
