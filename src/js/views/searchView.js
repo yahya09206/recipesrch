@@ -6,6 +6,10 @@ export const clearInput = () => {
 	elements.searchInput.value = '';
 };
 
+export const clearResults = () => {
+	elements.searchResultsList.innerHTML = '';
+}
+
 
 const renderRecipe = recipe => {
 	const markup = `
