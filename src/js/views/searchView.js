@@ -41,8 +41,8 @@ const renderRecipe = recipe => {
 	elements.searchResultsList.insertAdjacentHTML('beforeend', markup);
 };
 
-const renderButtons = (page) => {
-
+const renderButtons = (page, numResults, resPerPage) => {
+	const Pages = Math.ceil(numResults / resPerPage);
 };
 
 export const renderResults = (recipes, page = 1, resPerPage = 10) => {
