@@ -39,9 +39,23 @@ const renderRecipe = recipe => {
 	</li>
 	`;
 	elements.searchResultsList.insertAdjacentHTML('beforeend', markup);
-}
+};
+
+const renderButtons = (page) => {
+
+};
 
 export const renderResults = (recipes, page = 1, resPerPage = 10) => {
-	console.log(recipes);
-	recipes.forEach(renderRecipe);
-}
+	// Display 10 results per page
+	const start = (page - 1) * resPerPage;
+	const end = page * resPerPage;
+
+	recipes.slice(start, end).forEach(renderRecipe);
+};
+
+
+
+
+
+
+
