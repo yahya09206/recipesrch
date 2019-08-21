@@ -45,7 +45,7 @@ elements.searchForm.addEventListener('submit', e => {
 	controlSearch();
 });
 
-// Testing
+//Testing
 window.addEventListener('load', e => {
 	e.preventDefault();
 	controlSearch();
@@ -72,7 +72,7 @@ const controlRecipe = async () => {
 		// Create new recipe object
 		state.recipe = new Recipe(id);
 		// TESTING
-		// window.r = state.recipe;
+		window.r = state.recipe;
 
 
 		try {
