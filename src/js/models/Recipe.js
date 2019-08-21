@@ -32,7 +32,7 @@ export default class Recipe {
 	}
 
 	pasreIngredients() {
-		const unitsLong = ['tablespoons', 'tablespoon', 'ounce', 'ounces', 'teaspoons', 'teaspoon', 'cups', 'pounds'];
+		const unitsLong = ['tablespoons', 'tablespoon', 'ounce', 'ounces', 'teaspoon', 'teaspoons', 'cups', 'pounds'];
 		const unitsShort = ['tbsp', 'tbsp', 'oz', 'oz', 'tsp', 'tsp', 'cup', 'pound'];
 		const newIngredients = this.ingredients.map(el => {
 			// 1) Uniform units
@@ -42,9 +42,11 @@ export default class Recipe {
 			});
 
 			// 2) Remove parentheses
-			ingredient = ingredient.replace(/ *\([^)]*\) */g, "");
+			ingredient = ingredient.replace(/ *\([^)]*\) */g, '');
 
 			// 3) Parse ingredients into count, unit and ingredient
+
+			return ingredient;
 		});
 		this.ingredients = newIngredients;
 	}
