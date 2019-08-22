@@ -52,13 +52,28 @@ export default class Recipe {
 				let objIng;
 				if (unitIndex > -1) {
 					// There is a unit
+					const arrCount = arrIng.slice(0, unitIndex); 
+					let count;
+					if (arrCount.length === 1) {
+						count = eval(arrIng[0].replace('-', '+'));
+					} else {
+						count = eval(arrIng.slice(0, unitIndex).join('+'));
+					}
+
+					objIng = {
+						count,
+						unit: arrIng[unitIndex],
+						ingredient: arrIng.slice(unitIndex + 1).join(' ')
+					}
+
 				} else if (parseInt(arrIng[0], 10)){
 					// There is no unit, but 1st element is a number
 					objIng = {
 						count: parseInt(arrIng[0], 10),
 						unit: '',
-						ingredient: arrIng.slice(1).join(' ');
+						ingredient: arrIng.slice(1).join(' ')
 					}
+
 				}else if (unitIndex === -1) {
 					// There is no unit and no number in 1st position
 					objIng = {
@@ -68,7 +83,7 @@ export default class Recipe {
 					}
 				}
 
-			return ingredient;
+			return objIng;
 		});
 		this.ingredients = newIngredients;
 	}
