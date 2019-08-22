@@ -45,6 +45,9 @@ export default class Recipe {
 			ingredient = ingredient.replace(/ *\([^)]*\) */g, ' ');
 
 			// 3) Parse ingredients into count, unit and ingredient
+				// Test if there is a unit inside string
+				const arrIng = ingredient.split(' ');
+				const unitIndex = arrIng.indexOf()
 
 			return ingredient;
 		});
