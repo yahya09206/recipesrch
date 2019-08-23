@@ -62,7 +62,7 @@ const controlRecipe = async () => {
 
 	if (id) {
 		// Prepare ui for changes
-		renderLoader(el.recipe);
+		renderLoader(elements.recipe);
 		// Create new recipe object
 		state.recipe = new Recipe(id);
 
