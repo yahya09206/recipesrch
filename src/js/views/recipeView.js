@@ -15,7 +15,7 @@ const createIngredient = ingredient => `
 
 export const renderRecipe = recipe => {
 	const markup = `
-		<!--
+	
             <figure class="recipe__fig">
                 <img src="${recipe.img}" alt="${recipe.title}" class="recipe__img">
                 <h1 class="recipe__title">
@@ -84,7 +84,6 @@ export const renderRecipe = recipe => {
                     </svg>
                 </a>
             </div>
-            -->
 	`;
 	elements.recipe.insertAdjacentHTML('afterbegin', markup);
-}
+};
